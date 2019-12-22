@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+//Printing Pattern using Loops
+//https://www.hackerrank.com/challenges/printing-pattern-2/problem
+
+int main() 
+{
+
+    int InputNumber;
+    scanf("%d", &InputNumber);
+
+    int len = InputNumber*2 - 1;
+
+    for(int row=0;row<len;row++){
+        for(int col=0;col<len;col++){
+            int min = row < col ? row : col;
+            min = min < len-row ? min : len-row-1;
+            min = min < len-col-1 ? min : len-col-1;
+            printf("%d ", InputNumber-min);
+        }
+        printf("\n");
+       }
+
+}
